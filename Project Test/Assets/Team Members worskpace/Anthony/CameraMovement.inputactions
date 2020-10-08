@@ -1,0 +1,33 @@
+{
+    "name": "CameraMovement",
+    "maps": [
+        {
+            "name": "Camera",
+            "id": "505c77dd-98dd-4677-81c2-578a7d61a19b",
+            "actions": [
+                {
+                    "name": "CameraRotate",
+                    "type": "Value",
+                    "id": "c7e5b595-5ab7-4938-a6af-bb610c87c768",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "eed3f7fa-f9a3-4add-95b2-b964abfc7382",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CameraRotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
