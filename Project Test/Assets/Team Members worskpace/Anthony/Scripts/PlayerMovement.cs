@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Player Speeds")]
     public float walkSpeed = 2;
-    public float runSpeed = 6; 
-    [SerializeField] private float currentSpeed;
+    public float runSpeed = 6;
+    public float currentSpeed;
     [Header("Player Movement Smoothing")]
     [SerializeField] private float turnSmoothTime = 0.2f;
     private float turnSmoothVelocity;
