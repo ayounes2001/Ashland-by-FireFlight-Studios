@@ -40,7 +40,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard & Mouse",
+                    "groups": "Keyboard & Mouse;Controller",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -51,7 +51,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard & Mouse",
+                    "groups": "Keyboard & Mouse;Controller",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -62,7 +62,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard & Mouse",
+                    "groups": "Keyboard & Mouse;Controller",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -73,7 +73,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard & Mouse",
+                    "groups": "Keyboard & Mouse;Controller",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -104,6 +104,17 @@
                 },
                 {
                     "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Controller",
+            "bindingGroup": "Controller",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
                     "isOptional": false,
                     "isOR": false
                 }
