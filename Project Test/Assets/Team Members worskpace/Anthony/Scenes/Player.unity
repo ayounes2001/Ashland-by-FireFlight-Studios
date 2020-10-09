@@ -301,7 +301,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9d4708c041847b64d8bddcb3bbffcf5f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -476,6 +476,8 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 15
   currentSpeed: 0
+  stamina: 5
+  maxStamina: 5
   turnSmoothTime: 0.2
   speedSmoothTime: 0.1
   jumpForce: 1.1
@@ -590,9 +592,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c81b2f664db674b8b26e030e7db0ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
-  runSpeed: 15
+  walkSpeed: 2
+  runSpeed: 6
   currentSpeed: 0
+  stamina: 0
+  maxStamina: 5
   turnSmoothTime: 0.2
   speedSmoothTime: 0.1
   jumpForce: 1.1
@@ -1353,7 +1357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a7d3aac3cd83147b8d4e6459dbd501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 287645989}
+  player: {fileID: 254333075}
   speedText: {fileID: 1475499138}
 --- !u!114 &1475499138
 MonoBehaviour:
