@@ -2368,8 +2368,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.20269266, y: 0.43811342, z: 0.65200144}
-  m_Center: {x: 0.018305792, y: 0.22469454, z: 0.103729464}
+  m_Size: {x: 0.20269266, y: 0.3901051, z: 0.65200144}
+  m_Center: {x: 0.018305792, y: 0.18857424, z: 0.103729464}
 --- !u!114 &254333075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2389,8 +2389,6 @@ MonoBehaviour:
   maxStamina: 5
   turnSmoothTime: 0.2
   speedSmoothTime: 0.1
-  jumpForce: 1.1
-  raycastDistance: 1.1
   cameraT: {fileID: 0}
 --- !u!1 &178112
 GameObject:

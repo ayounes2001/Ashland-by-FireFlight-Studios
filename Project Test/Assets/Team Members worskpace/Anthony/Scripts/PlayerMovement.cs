@@ -20,11 +20,8 @@ public class PlayerMovement : MonoBehaviour
     public float speedSmoothTime = 0.1f;
     private float speedSmoothVelocity;
 
-  
-
-    [Header("Jump Variables")]
-    public float jumpForce;
-    public float raycastDistance;
+    
+   
     public Transform cameraT;
 
     private void Start()
@@ -75,23 +72,11 @@ public class PlayerMovement : MonoBehaviour
         {
             stamina += Time.deltaTime;
             Debug.Log("Regen Stam");
-            runSpeed = 15;
+            currentSpeed = runSpeed;
 
         }
     }
 
-    public void Jump(InputAction.CallbackContext obj)
-    {
-        if (IsGrounded())
-        {
-            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        }
-
-    }
-
-    private bool IsGrounded()
-    {
-        Debug.DrawRay(transform.position,Vector3.down * raycastDistance,Color.blue);
-        return Physics.Raycast(transform.position,Vector3.down,raycastDistance);
-    }
+   
+    
 }
