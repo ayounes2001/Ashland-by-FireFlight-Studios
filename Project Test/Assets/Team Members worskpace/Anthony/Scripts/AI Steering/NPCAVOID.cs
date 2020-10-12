@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -27,7 +28,14 @@ namespace AnthonyY
         }
         //TODO
         //HealthBased code in here
-        
+        private void OnCollisionEnter(Collision other)
+        {
+            other.gameObject?.GetComponent<PlayerMovement>()?.GetComponent<HealthComponent>()?.TakeHp(damageAmount);
+        }
 
+        void Death()
+        {
+            gameObject.GetComponent<HealthComponent>()?.Death();
+        }
     }
 }

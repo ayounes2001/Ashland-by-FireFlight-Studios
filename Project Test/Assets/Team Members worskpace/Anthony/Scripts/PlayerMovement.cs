@@ -20,14 +20,15 @@ public class PlayerMovement : MonoBehaviour
     public float speedSmoothTime = 0.1f;
     private float speedSmoothVelocity;
 
-    
-   
+
+
     public Transform cameraT;
 
     private void Start()
     {
         cameraT = Camera.main.transform;
         stamina = maxStamina;
+        
     }
 
     private void Update()
@@ -77,6 +78,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-   
-    
+    public void Death(HealthComponent health)
+    {
+        Destroy(gameObject);
+    }
 }
