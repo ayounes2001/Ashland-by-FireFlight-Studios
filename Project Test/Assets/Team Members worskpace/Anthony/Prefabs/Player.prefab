@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 8276618150686870888}
   - component: {fileID: 5686543871145897033}
   - component: {fileID: 8276618150686870885}
+  - component: {fileID: 311815321}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -166,6 +167,7 @@ MonoBehaviour:
   maxStamina: 3
   turnSmoothTime: 0.2
   speedSmoothTime: 0.1
+  slider: {fileID: 0}
   cameraT: {fileID: 8276618150189373510}
 --- !u!114 &8276618150686870885
 MonoBehaviour:
@@ -182,6 +184,23 @@ MonoBehaviour:
   jumpForce: 7
   raycastDistance: 1.1
   player: {fileID: 5686543871145897033}
+--- !u!114 &311815321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8276618150686870890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087f549c740a3034caddf6ce16a87f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  currentHealth: 100
+  deathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8276618150758452499
 GameObject:
   m_ObjectHideFlags: 0

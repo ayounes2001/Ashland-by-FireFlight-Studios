@@ -88,7 +88,12 @@ public class PlayerMovement : MonoBehaviour
             // currentSpeed = 15f;
         }
     }
-    
+
+    private void OnCollisionEnter(Collision other)
+    {
+        
+    }
+
     public void Death(HealthComponent health)
     {
         Destroy(gameObject);
