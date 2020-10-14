@@ -113,8 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockCursor: 1
-  mouseSensitivity: 5
+  mouseSensitivity: 3
   target: {fileID: 0}
   distanceFromTarget: 12.52
-  pitchMinMax: {x: -40, y: 85}
+  pitchMinMax: {x: -8, y: 85}
   rotationSmoothTime: 0.12

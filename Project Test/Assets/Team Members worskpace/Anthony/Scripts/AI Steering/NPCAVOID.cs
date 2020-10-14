@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+
 using UnityEngine;
 
 namespace AnthonyY
@@ -30,6 +31,7 @@ namespace AnthonyY
         //HealthBased code in here
         private void OnCollisionEnter(Collision other)
         {
+            // ReSharper disable once Unity.NoNullPropagation
             other.gameObject?.GetComponent<PlayerMovement>()?.GetComponent<HealthComponent>()?.TakeHp(damageAmount);
         }
 
