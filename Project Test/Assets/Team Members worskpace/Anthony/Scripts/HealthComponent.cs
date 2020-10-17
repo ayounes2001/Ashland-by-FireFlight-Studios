@@ -16,8 +16,11 @@ public class HealthComponent : MonoBehaviour
 
     private void Update()
     {
-        slider.value = currentHealth;
-        slider.maxValue = MaxHealth;
+        if (!(slider is null))
+        {
+            slider.value = currentHealth;
+            slider.maxValue = MaxHealth;
+        }
     }
 
     public void AddHp(int amount)
