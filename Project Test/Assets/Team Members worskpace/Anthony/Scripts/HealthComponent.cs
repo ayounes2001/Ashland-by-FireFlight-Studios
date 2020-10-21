@@ -14,6 +14,9 @@ public class HealthComponent : MonoBehaviour
 
     public UnityEvent<HealthComponent> deathEvent;
 
+    //sorry anythony you can change this whenever its just for the demo
+    public GameObject DeadText;
+
     private void Update()
     {
         if (!(slider is null))
@@ -43,6 +46,7 @@ public class HealthComponent : MonoBehaviour
         {
             deathEvent.Invoke(this);
             Destroy(gameObject);
+            DeadText.SetActive(true);
         }           
     }
 }
