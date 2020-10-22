@@ -43,6 +43,6 @@ public class CamFollow : MonoBehaviour
         //following the player and setting the distance between our player and camera.       
         _currentRotation = Vector3.SmoothDamp(_currentRotation, new Vector3(pitch, yaw), ref _rotationSmoothVelocity, rotationSmoothTime);
         transform.eulerAngles = _currentRotation;
-        if (!(target is null)) transform.position = target.position - transform.forward  * distanceFromTarget;
+        if (!(target is null)) transform.position = target.position - transform.forward * distanceFromTarget;
     }
 }

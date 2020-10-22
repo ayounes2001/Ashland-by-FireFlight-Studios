@@ -51509,6 +51509,7 @@ MonoBehaviour:
   deathEvent:
     m_PersistentCalls:
       m_Calls: []
+  DeadText: {fileID: 0}
 --- !u!1 &1669945854 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7525829977983449015, guid: 3bc66c5cd7676a9488b915ee3f39bba8, type: 3}
