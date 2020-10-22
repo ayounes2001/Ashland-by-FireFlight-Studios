@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         float targetSpeed = ((running) ? runSpeed : walkSpeed) * inputDirection.magnitude;
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime);
 
-       transform.Translate((transform.forward * (currentSpeed * Time.deltaTime)), Space.World);
+        transform.Translate((transform.forward * (currentSpeed * Time.deltaTime)), Space.World);
      
         
         // ***** STAMINA CODE ********
