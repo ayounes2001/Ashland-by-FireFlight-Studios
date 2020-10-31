@@ -869,8 +869,6 @@ MonoBehaviour:
   distanceFromTarget: 7
   pitchMinMax: {x: 0, y: 85}
   rotationSmoothTime: 2
-  _camYAngle: 30
-  _camZAngle: 0
 --- !u!114 &1394539858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1480,6 +1478,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 303027941150970312, guid: 8436ebb8b00166f4288ce34bbf368580, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 303027941150970312, guid: 8436ebb8b00166f4288ce34bbf368580, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 303027941150970312, guid: 8436ebb8b00166f4288ce34bbf368580, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 303027942131431130, guid: 8436ebb8b00166f4288ce34bbf368580, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 303027942131431130, guid: 8436ebb8b00166f4288ce34bbf368580, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5035190523634682638, guid: 8436ebb8b00166f4288ce34bbf368580, type: 3}
       propertyPath: m_Name
       value: Canvas
