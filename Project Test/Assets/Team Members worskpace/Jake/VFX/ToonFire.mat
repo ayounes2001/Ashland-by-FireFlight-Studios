@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Fire
-  m_Shader: {fileID: -6465566751694194690, guid: 345449d3b90b21249ae3923473e8ce5b, type: 3}
+  m_Name: ToonFire
+  m_Shader: {fileID: -6465566751694194690, guid: 8927ad3529ec0ba4d92eff8b61903bd8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -21,17 +21,17 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_3CEBD4C8:
-        m_Texture: {fileID: 2800000, guid: 80d4f55d493dcfc49a4212db87ceebc3, type: 3}
+    - Texture2D_99262414:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_F244CE30:
+        m_Texture: {fileID: 2800000, guid: 322c18a8155c7c0458bf39bd2b50c728, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2B4D959D: -0.05
-    - Vector1_5543E517: 3.5
-    - Vector1_ACC324CB: 2
-    - Vector1_C5F195B5: 0.75
+    - Vector1_DFC072D0: 0.9
     m_Colors:
-    - Color_FE00F2B: {r: 7.999999, g: 3.057591, b: 1.172775, a: 0}
-    - Vector2_BA51C6C9: {r: -0.35, g: 0.22, b: 0, a: 0}
-    - Vector2_F85052D8: {r: 0.13, g: -0.1, b: -0.76, a: 0}
+    - Color_658C4C18: {r: 3.623529, g: 0.7372549, b: 0.1882353, a: 0}
+    - Vector2_6B351F7B: {r: 0, g: -0.5, b: 0, a: 0}
   m_BuildTextureStacks: []
