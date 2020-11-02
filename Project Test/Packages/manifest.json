@@ -8,7 +8,7 @@
     "com.unity.inputsystem": "1.0.0",
     "com.unity.probuilder": "4.2.3",
     "com.unity.render-pipelines.high-definition": "8.2.0",
-    "com.unity.render-pipelines.high-definition-config": "file:../LocalPackages/com.unity.render-pipelines.high-definition-config",
+    "com.unity.render-pipelines.high-definition-config": "file:C:\\Users\\SAE\\Desktop\\FireFlight\\FireFlight\\Project Test\\LocalPackages\\com.unity.render-pipelines.high-definition-config",
     "com.unity.render-pipelines.universal": "8.2.0",
     "com.unity.test-framework": "1.1.16",
     "com.unity.textmeshpro": "3.0.1",

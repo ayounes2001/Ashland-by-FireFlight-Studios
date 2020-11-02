@@ -82,7 +82,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.high-definition-config": {
-      "version": "file:../LocalPackages/com.unity.render-pipelines.high-definition-config",
+      "version": "file:C:\\Users\\SAE\\Desktop\\FireFlight\\FireFlight\\Project Test\\LocalPackages\\com.unity.render-pipelines.high-definition-config",
       "depth": 0,
       "source": "local",
       "dependencies": {
