@@ -7423,24 +7423,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &126394716 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 606821152387935513, guid: 1b1f732a13295cc44bcf85116edd702e, type: 3}
-  m_PrefabInstance: {fileID: 2001979921}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &126394717
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126394716}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 5, z: 8}
-  m_Center: {x: 0, y: -1, z: 2.5}
 --- !u!4 &126394719 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 225193398392780707, guid: 1b1f732a13295cc44bcf85116edd702e, type: 3}
@@ -13664,8 +13646,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &216931649
-MeshCollider:
+--- !u!65 &216931649
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -13674,10 +13656,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 150.00003, y: 1, z: 50.00001}
+  m_Center: {x: 75.000015, y: 0.5, z: -25.000006}
 --- !u!114 &216931650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113470,6 +113451,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 126394717, guid: 1b1f732a13295cc44bcf85116edd702e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 126394717, guid: 1b1f732a13295cc44bcf85116edd702e, type: 3}
+      propertyPath: m_Center.y
+      value: -1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 126394720, guid: 1b1f732a13295cc44bcf85116edd702e, type: 3}
       propertyPath: slider
       value: 
@@ -113482,6 +113471,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 569223342}
+    - target: {fileID: 126394722, guid: 1b1f732a13295cc44bcf85116edd702e, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 126394722, guid: 1b1f732a13295cc44bcf85116edd702e, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 126394722, guid: 1b1f732a13295cc44bcf85116edd702e, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 126394723, guid: 1b1f732a13295cc44bcf85116edd702e, type: 3}
       propertyPath: slider
       value: 
@@ -113492,7 +113493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 225193398392780707, guid: 1b1f732a13295cc44bcf85116edd702e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5
+      value: 3.523
       objectReference: {fileID: 0}
     - target: {fileID: 225193398392780707, guid: 1b1f732a13295cc44bcf85116edd702e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -113534,8 +113535,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Idel Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 126394717, guid: 1b1f732a13295cc44bcf85116edd702e, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b1f732a13295cc44bcf85116edd702e, type: 3}
 --- !u!43 &2006274020
 Mesh:
