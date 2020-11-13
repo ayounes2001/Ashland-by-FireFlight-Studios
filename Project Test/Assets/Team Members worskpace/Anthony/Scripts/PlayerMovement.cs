@@ -9,6 +9,10 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Jump playerjump;
+    [Header("Player Animation State")]
+    public Animator MovementPAnimator;
+
     [Header("Player Speeds")]
     public int walkSpeed = 2;
     public int runSpeed = 6;
@@ -37,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Movement();
-        
+     
         //***** UI CODE *****
         slider.value = stamina;
         slider.maxValue = maxStamina;
@@ -57,7 +61,9 @@ public class PlayerMovement : MonoBehaviour
                 (Mathf.Atan2(inputDirection.x, inputDirection.y) * Mathf.Rad2Deg + cameraT.eulerAngles.y);
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation,
                 ref turnSmoothVelocity, turnSmoothTime);
+            if (playerjump.isGrounded != false && MovementPAnimator.GetInteger("CurrentAnimation") != 2) MovementPAnimator.SetInteger("CurrentAnimation", 1);  //switching to walking animation      
         }
+        else { if (playerjump.isGrounded != false) { MovementPAnimator.SetInteger("CurrentAnimation", 0); } }//switching to idle animation
 
 
         //Changing inbetween normal speed and runningSpeed and actually moving the player
@@ -79,7 +85,10 @@ public class PlayerMovement : MonoBehaviour
                 running = false;
                 runSpeed = walkSpeed;
                 Debug.Log("cant run anymore");
+
+                if (playerjump.isGrounded != false && MovementPAnimator.GetInteger("CurrentAnimation") != 2) MovementPAnimator.SetInteger("CurrentAnimation", 1);  //switching to walking animation 
             }
+           else{  MovementPAnimator.SetInteger("CurrentAnimation", 3);  } //switching to running animation
         }
         else if(stamina < maxStamina)
         {
