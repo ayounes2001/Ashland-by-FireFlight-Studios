@@ -8,17 +8,20 @@ namespace AnthonyY
 {
     public class DemoTriggerFollow : MonoBehaviour
     {
-        public TurnTowardsBehaviour AIscript;
-        public NPCAVOID _avoidScript;
+        [Header("AI scripts")]
+        public TurnTowardsBehaviour aiScript;
+        public NPCAVOID avoidScript;
         public AvoidBehaviour avoidBehaviourScript;
+        
+        public event Action playerMetEvent;
         private void OnTriggerEnter(Collider other)
         {
-         
-                print("hi");
-                AIscript = GetComponent<TurnTowardsBehaviour>();
-                AIscript.enabled = true;
-                _avoidScript = GetComponent<NPCAVOID>();
-                _avoidScript.enabled = true;
+                 playerMetEvent?.Invoke();
+              Debug.Log("hi");
+                aiScript = GetComponent<TurnTowardsBehaviour>();
+                aiScript.enabled = true;
+                avoidScript = GetComponent<NPCAVOID>();
+                avoidScript.enabled = true;
 
                 avoidBehaviourScript = GetComponent<AvoidBehaviour>();
                 avoidBehaviourScript.enabled = true;
