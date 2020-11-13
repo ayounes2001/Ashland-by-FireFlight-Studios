@@ -59,6 +59,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 5, z: 8}
   m_Center: {x: 0, y: -1.5, z: 2.5}
+--- !u!114 &1893428080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3574807562436896244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83dbfd6ab155bd34e88942d3deccec0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 7
+  player: {fileID: 0}
+  isGrounded: 0
 --- !u!114 &1893428081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,21 +93,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DeadText: {fileID: 0}
---- !u!114 &1893428080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3574807562436896244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83dbfd6ab155bd34e88942d3deccec0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 7
-  raycastDistance: 1.1
-  player: {fileID: 0}
 --- !u!114 &1893428082
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,9 +7,9 @@ using UnityEngine.InputSystem;
 
 public class Jump : MonoBehaviour
 {
-    public float jumpForce = 10f;
-    public float raycastDistance;
+    public float jumpForce = 5f;
     public PlayerMovement player;
+    public bool isGrounded = false;
 
     private Rigidbody rb;
 
@@ -19,33 +19,24 @@ public class Jump : MonoBehaviour
        
     }
  
-    void Update ()
+    void FixedUpdate ()
     {
         Jumping();
     }
     public void Jumping()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
-            if (AmIGrounded())
-            {
-                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-                
-            }
-            else if(!AmIGrounded())
-
-            {
-                player.currentSpeed = player.walkSpeed;
-            }
+            rb.AddForce(new Vector3(0,jumpForce,0),ForceMode.Impulse);
+            isGrounded = false;
         }
 
     }
 
-    private bool AmIGrounded()
+    private void OnCollisionStay(Collision other)
     {
-        Debug.DrawRay(transform.position,Vector3.down* raycastDistance,Color.blue);
-        return (Physics.Raycast(transform.position, Vector3.down, raycastDistance));
-
+        isGrounded = true;
     }
+
 }
 
