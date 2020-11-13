@@ -46,6 +46,8 @@ GameObject:
   - component: {fileID: 5686543871145897033}
   - component: {fileID: 8276618150686870885}
   - component: {fileID: 311815321}
+  - component: {fileID: 5190659806447574184}
+  - component: {fileID: 1493412936}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -182,8 +184,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 7
-  raycastDistance: 1.1
   player: {fileID: 5686543871145897033}
+  isGrounded: 0
 --- !u!114 &311815321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,9 +200,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   currentHealth: 100
+  slider: {fileID: 0}
   deathEvent:
     m_PersistentCalls:
       m_Calls: []
+  DeadText: {fileID: 0}
+--- !u!114 &5190659806447574184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8276618150686870890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49225689e81377e4fb2ff25fcc3c262f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcNewSpeed: 15
+--- !u!65 &1493412936
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8276618150686870890}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.4099946, y: 2, z: 4.986325}
+  m_Center: {x: -0.12059617, y: 0, z: 0.12205768}
 --- !u!1 &8276618150758452499
 GameObject:
   m_ObjectHideFlags: 0

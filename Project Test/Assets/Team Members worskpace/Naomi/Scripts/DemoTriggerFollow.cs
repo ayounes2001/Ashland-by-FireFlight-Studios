@@ -10,6 +10,7 @@ namespace AnthonyY
     {
         public TurnTowardsBehaviour AIscript;
         public NPCAVOID _avoidScript;
+        public AvoidBehaviour avoidBehaviourScript;
         private void OnTriggerEnter(Collider other)
         {
          
@@ -18,7 +19,10 @@ namespace AnthonyY
                 AIscript.enabled = true;
                 _avoidScript = GetComponent<NPCAVOID>();
                 _avoidScript.enabled = true;
-           
+
+                avoidBehaviourScript = GetComponent<AvoidBehaviour>();
+                avoidBehaviourScript.enabled = true;
+
         }
      
     }
