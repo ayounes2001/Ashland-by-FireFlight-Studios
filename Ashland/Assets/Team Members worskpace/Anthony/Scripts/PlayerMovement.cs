@@ -11,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public Jump playerjump;
     [Header("Player Animation State")]
-    public Animator MovementPAnimator;
+    public Animator MovementPAnimator;      //ANIMATIONS : 0 = idle , 1 = walking , 2 = jumping , 3 = running , 4 = in air 
+
 
     [Header("Player Speeds")]
     public int walkSpeed = 2;
@@ -63,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
                 ref turnSmoothVelocity, turnSmoothTime);
             if (playerjump.isGrounded != false && MovementPAnimator.GetInteger("CurrentAnimation") != 2) MovementPAnimator.SetInteger("CurrentAnimation", 1);  //switching to walking animation      
         }
-        else { if (playerjump.isGrounded != false) { MovementPAnimator.SetInteger("CurrentAnimation", 0); } }//switching to idle animation
+        else { if (playerjump.isGrounded != false && MovementPAnimator.GetInteger("CurrentAnimation") != 2) { MovementPAnimator.SetInteger("CurrentAnimation", 0); } }//switching to idle animation
 
 
         //Changing inbetween normal speed and runningSpeed and actually moving the player
@@ -75,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
      
         
         // ***** STAMINA CODE ********
-        if (running)
+        if (running )
         {
             stamina -= Time.deltaTime;
             Debug.Log("Im losing Stam!");
