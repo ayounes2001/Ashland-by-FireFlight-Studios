@@ -32,7 +32,7 @@ public class Jump : MonoBehaviour
     }
     public void Jumping()
     {
-        if (Input.GetKey(KeyCode.Space) && isGrounded == true)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
             JumpPAnimator.SetInteger("CurrentAnimation", 2); //switching to jumping animation      
             
