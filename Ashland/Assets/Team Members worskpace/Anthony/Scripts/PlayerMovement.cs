@@ -15,8 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
 
     [Header("Player Speeds")]
-    public int walkSpeed = 2;
-    public int runSpeed = 6;
+    public int walkSpeed = 250;
+    public int runSpeed = 500;
     public float currentSpeed;
     public float stamina = 5;
     public float maxStamina = 5;
@@ -72,7 +72,11 @@ public class PlayerMovement : MonoBehaviour
         float targetSpeed = ((!running) ? walkSpeed : runSpeed) * inputDirection.magnitude;
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime);
 
-        transform.Translate((transform.forward * (currentSpeed * Time.deltaTime)), Space.World);
+        Rigidbody rb = GetComponent<Rigidbody>();
+        
+        rb.velocity = transform.forward * (currentSpeed * Time.deltaTime);
+        
+        // transform.Translate((transform.forward * (currentSpeed * Time.deltaTime)), Space.World);
      
         
         // ***** STAMINA CODE ********
@@ -95,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
         {
             stamina += Time.deltaTime;
             Debug.Log("Regen Stam");
-            runSpeed = 15;
+            runSpeed = 500;
             // currentSpeed = 15f;
         }
     }
