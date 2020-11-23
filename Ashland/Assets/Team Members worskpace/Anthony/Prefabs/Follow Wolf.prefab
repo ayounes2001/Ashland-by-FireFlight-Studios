@@ -1,5 +1,101 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5465068069087495736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3823488556461580815}
+  - component: {fileID: 8005367536106485505}
+  m_Layer: 0
+  m_Name: Left Feeler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3823488556461580815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5465068069087495736}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: -0.12, y: 0.45999908, z: 0.293}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7446618562321142367}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+--- !u!114 &8005367536106485505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5465068069087495736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 701f2cf0fb970fb4d8dacd2acdcef32c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rB: {fileID: 7446618562301914517}
+  distance: 3
+  turnSpeed: -2
+  direction: 1
+  feelerRadius: 1
+--- !u!1 &6143548967837658113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3000938315873577333}
+  - component: {fileID: 7038056650767402348}
+  m_Layer: 0
+  m_Name: Right Feeler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3000938315873577333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6143548967837658113}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 0.129, y: 0.45999908, z: 0.294}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7446618562321142367}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+--- !u!114 &7038056650767402348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6143548967837658113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 701f2cf0fb970fb4d8dacd2acdcef32c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rB: {fileID: 7446618562301914517}
+  distance: 3
+  turnSpeed: 2
+  direction: 1
+  feelerRadius: 1
 --- !u!1 &7446618561923666069
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,6 +2074,8 @@ Transform:
   - {fileID: 7446618562321185023}
   - {fileID: 7446618562321123669}
   - {fileID: 7446618561923666068}
+  - {fileID: 3823488556461580815}
+  - {fileID: 3000938315873577333}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2057,7 +2155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff581a081c2e214f867a66fb294a172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 20
   damageAmount: 0
 --- !u!114 &7446618560743241875
 MonoBehaviour:
