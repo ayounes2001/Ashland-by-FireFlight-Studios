@@ -12,54 +12,96 @@ public class Jump : MonoBehaviour
     public Vector3 PlayerVelocity;
 
     public float jumpForce = 5f;
+    public float JumpSpeed = 5;
     public PlayerMovement player;
     public bool isGrounded = false;
-
+    public bool jumping = false;
+    bool space_pressed;
+    public GameObject DingoBody;
     private Rigidbody rb;
+
+    int groundLayerMask;
+
+
+    float spaceDownTime = 0;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();    
+        rb = DingoBody.GetComponent<Rigidbody>();
+        groundLayerMask = 1 << 8;
+        //groundLayerMask = ~ groundLayerMask;
     }
     void Update ()
     {
         PlayerVelocity = rb.velocity;
-        if (isGrounded == true)
-        {
-            Jumping();
-        }
-        else 
-        {
-            //JumpPAnimator.GetInteger("CurrentAnimation") != 2
-            JumpPAnimator.SetInteger("CurrentAnimation", 4); //this line is just for if the player is falling
-        }
-        
+
+       if (isGrounded == true)
+        { 
+            if (Input.GetKey(KeyCode.Space))
+            {
+                space_pressed = true;               
+                Jumping();
+                print(spaceDownTime);
+            }
+            if (Input.GetKeyUp(KeyCode.Space))  { space_pressed = false; }
+            if ( spaceDownTime > 30)    { spaceDownTime = 30;}
+            if (spaceDownTime < 30) { spaceDownTime = 5;}
+        }       
+    }
+    private void FixedUpdate()
+    {
+
+        if (space_pressed == true) { spaceDownTime++; }
+        GroundCheck();
     }
     public void Jumping()
     {
-       
-            if (Input.GetKey(KeyCode.Space))
-            {
-                JumpPAnimator.SetInteger("CurrentAnimation", 2); //switching to jumping animation      
-                print("jump asshole");
-            }
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                print("jump asshole");
-                rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
-              
-                JumpPAnimator.SetInteger("CurrentAnimation", 4);
-                isGrounded = false;
-            }
-        
+         jumping = true;
+         JumpPAnimator.SetInteger("CurrentAnimation", 2); //switching to jumping animation      
+         print("jump asshole");              
+         rb.AddForce(new Vector3(PlayerVelocity.x, jumpForce, PlayerVelocity.z) * (JumpSpeed/2)); 
+         StartCoroutine(jumpDelay());
     }
 
-    private void OnCollisionStay(Collision other)
+    IEnumerator jumpDelay()
     {
-        isGrounded = true;
-       // Landing(JumpPAnimator.GetInteger("CurrentAnimation")); 
+        yield return new WaitForSeconds(spaceDownTime/20);
+        JumpPAnimator.SetInteger("CurrentAnimation", 4);
+        spaceDownTime = 0;
+        jumping = false;
     }
-    private void Landing(int a)
-    { if (a == 4 || a == 2) JumpPAnimator.SetInteger("CurrentAnimation", 0); }
+
+    public float GravitySpeed = 3;
+    private float playerHeightOffset = 2;
+    bool hasTriggeredIdle = true;
+    public void GroundCheck()
+    {
+        //gravity and ground offset
+        
+        if(!jumping)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, groundLayerMask))
+            {
+                if (Vector3.Distance(this.transform.position, hit.point) > playerHeightOffset) // if we are too far from ground apply gravity
+                {
+                    transform.position = Vector3.Lerp(transform.position, transform.position + Vector3.down, Time.fixedDeltaTime * GravitySpeed); // move down with gravity 
+                    isGrounded = false;
+                    hasTriggeredIdle = false;
+                }
+                else
+                {
+                    isGrounded = true;
+                    if(hasTriggeredIdle == false)
+                    {
+                        hasTriggeredIdle = true;
+                        JumpPAnimator.SetInteger("CurrentAnimation", 0);
+                    }
+                }
+            }
+        }
+
+    }    
+  
 }
 

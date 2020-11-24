@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
         //Basing our Input on the direction of the camera and smoothing it out
         if (inputDirection != Vector2.zero)
         {
+            print("moving");
             float targetRotation =
                 (Mathf.Atan2(inputDirection.x, inputDirection.y) * Mathf.Rad2Deg + cameraT.eulerAngles.y);
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation,
