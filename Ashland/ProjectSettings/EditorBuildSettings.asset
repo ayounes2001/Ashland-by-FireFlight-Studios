@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: abb9464de9504314d9ebe94fdb40b802
+  - enabled: 1
+    path: Assets/Team Members worskpace/Jake/Level Layout.unity
+    guid: 3dd01abe2b8101d488d325b192bfd23f
   m_configObjects: {}
