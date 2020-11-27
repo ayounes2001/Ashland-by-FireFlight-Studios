@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
     public GameObject MainMenu;
     
     
-    private int nextSceneToLoad;
+    
 
 
 
@@ -94,14 +94,7 @@ public class UIManager : MonoBehaviour
 
     }
 
-    public void SwitchScene()
-    {
-
-        nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
-        SceneManager.LoadScene(nextSceneToLoad);
-        MainMenu?.SetActive(false);
-
-    }
+    
 
    
 
@@ -125,13 +118,7 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void GoBackToMainMenu()
-    {
-        nextSceneToLoad = SceneManager.GetActiveScene().buildIndex - 1;
-        SceneManager.LoadScene(nextSceneToLoad);
-        MainMenu?.SetActive(true);
-        
-    }
+   
     
 }
 

@@ -467,6 +467,74 @@ MonoBehaviour:
       data1: 0
       data2: 0
   defaultFrameSettings: 0
+--- !u!1001 &1552143175
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6124915214101056307, guid: 7acc45886f49c3845b4e867eba3af81b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 298.70276
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124915214101056307, guid: 7acc45886f49c3845b4e867eba3af81b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 283.861
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124915214101056307, guid: 7acc45886f49c3845b4e867eba3af81b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -38.676163
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124915214101056307, guid: 7acc45886f49c3845b4e867eba3af81b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124915214101056307, guid: 7acc45886f49c3845b4e867eba3af81b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124915214101056307, guid: 7acc45886f49c3845b4e867eba3af81b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124915214101056307, guid: 7acc45886f49c3845b4e867eba3af81b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124915214101056307, guid: 7acc45886f49c3845b4e867eba3af81b, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124915214101056307, guid: 7acc45886f49c3845b4e867eba3af81b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124915214101056307, guid: 7acc45886f49c3845b4e867eba3af81b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124915214101056307, guid: 7acc45886f49c3845b4e867eba3af81b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719359939185888013, guid: 7acc45886f49c3845b4e867eba3af81b, type: 3}
+      propertyPath: m_Name
+      value: Game Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7acc45886f49c3845b4e867eba3af81b, type: 3}
+--- !u!114 &1552143176 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7858560717775221721, guid: 7acc45886f49c3845b4e867eba3af81b, type: 3}
+  m_PrefabInstance: {fileID: 1552143175}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80e75982c565e94d9ccbe01f193928a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1733588615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -874,7 +942,15 @@ PrefabInstance:
     - target: {fileID: 5546599550738135084, guid: 4b81778cf42d2ce45ba809dbcfe42cf1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 798487011}
+      objectReference: {fileID: 1552143176}
+    - target: {fileID: 5546599550738135084, guid: 4b81778cf42d2ce45ba809dbcfe42cf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546599550738135084, guid: 4b81778cf42d2ce45ba809dbcfe42cf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5546599550738135085, guid: 4b81778cf42d2ce45ba809dbcfe42cf1, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -307
