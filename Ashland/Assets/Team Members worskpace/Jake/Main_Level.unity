@@ -3137,6 +3137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32358c9331a3656479b515fb8c0fc765, type: 3}
+<<<<<<< HEAD
 --- !u!1001 &1244203035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3202,6 +3203,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11f5041ad6270d44f9f9de8720a3a8f8, type: 3}
+=======
+>>>>>>> parent of a63b5f0... fixed the materials in Jakes Scene
 --- !u!1001 &1251870468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3299,7 +3302,11 @@ Transform:
   - {fileID: 2138822396}
   - {fileID: 1652858653}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 13
+=======
+  m_RootOrder: 11
+>>>>>>> parent of a63b5f0... fixed the materials in Jakes Scene
   m_LocalEulerAnglesHint: {x: 0, y: 197.347, z: 0}
 --- !u!4 &1301666389 stripped
 Transform:
@@ -4141,7 +4148,7 @@ Transform:
   - {fileID: 505082237}
   - {fileID: 978502950}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 197.347, z: 0}
 --- !u!1 &1633384957
 GameObject:
