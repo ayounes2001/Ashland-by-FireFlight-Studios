@@ -162,7 +162,7 @@ MonoBehaviour:
   PlayerVelocity: {x: 0, y: 0, z: 0}
   jumpForce: 2500
   JumpSpeed: 2
-  player: {fileID: 0}
+  player: {fileID: 1893428082}
   isGrounded: 0
   jumping: 0
   DingoBody: {fileID: 3574807562436896244}
@@ -229,9 +229,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4240020461529743182}
     m_Modifications:
+    - target: {fileID: 1807832391637019970, guid: 839ba81cece7f6b439551029bcaf194a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1807832391637019971, guid: 839ba81cece7f6b439551029bcaf194a, type: 3}
       propertyPath: m_Name
       value: 'Fire Camera '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1807832391637019973, guid: 839ba81cece7f6b439551029bcaf194a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1807832391637019974, guid: 839ba81cece7f6b439551029bcaf194a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -289,15 +297,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0d9d8bb168342b54e87eea9566a0f360, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -332.1
+      value: 251.76947
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0d9d8bb168342b54e87eea9566a0f360, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.69
+      value: 4.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0d9d8bb168342b54e87eea9566a0f360, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1142.3134
+      value: 55.48137
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0d9d8bb168342b54e87eea9566a0f360, type: 3}
       propertyPath: m_LocalRotation.x
