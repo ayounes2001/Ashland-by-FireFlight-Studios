@@ -8,99 +8,96 @@ using UnityEngine.InputSystem;
 public class Jump : MonoBehaviour
 {
     public Animator JumpPAnimator;  //ANIMATIONS : 0 = idle , 1 = walking , 2 = jumping , 3 = running , 4 = in air 
-
-    public Vector3 PlayerVelocity;
-
-    public float jumpForce = 5f;
-    public float JumpSpeed = 5;
-    public PlayerMovement player;
-    public bool isGrounded = false;
-    public bool jumping = false;
-    bool space_pressed;
     public GameObject DingoBody;
+    public Vector3 playerVel;
     private Rigidbody rb;
 
+    public float jumpForce;
+    public float jumpSpeed;
+    public float jumpHeight;
+    float spaceDownTime;
+    public float gravitySpeed;
+    public float playerHeightOffset;
+    private float idealDistance; //
     int groundLayerMask;
 
-
-    float spaceDownTime = 0;
-
+    public bool grounded;
+    public bool jumping;
+    public bool falling;
+    bool space_pressed = false;
+   
+   
     void Start()
     {
         rb = DingoBody.GetComponent<Rigidbody>();
         groundLayerMask = 1 << 8;
+        idealDistance = transform.localScale.y + playerHeightOffset;
         //groundLayerMask = ~ groundLayerMask;
     }
-    void Update ()
+    void Update()
     {
-        PlayerVelocity = rb.velocity;
+        playerVel = rb.velocity;
 
-       if (isGrounded == true)
-        { 
-            if (Input.GetKey(KeyCode.Space))
+        if (grounded == true)
+        {
+            if (Input.GetKey(KeyCode.Space) && space_pressed == false)
             {
-                space_pressed = true;               
+                space_pressed = true;
+             
                 Jumping();
-                print(spaceDownTime);
+                //print(spaceDownTime);
             }
-            if (Input.GetKeyUp(KeyCode.Space))  { space_pressed = false; }
-            if ( spaceDownTime > 30)    { spaceDownTime = 30;}
-            if (spaceDownTime < 30) { spaceDownTime = 5;}
-        }       
+            if (Input.GetKeyUp(KeyCode.Space)) { space_pressed = false; }
+            if (spaceDownTime > 5) { spaceDownTime = 5; }; if (spaceDownTime < 0.5f) { spaceDownTime = 0.5f; } //clamps so the player can't just hold down space forever and fly  
+        }
+        if (falling == true)
+        {
+            transform.position = Vector3.Lerp(transform.position, transform.position + Vector3.down, Time.fixedDeltaTime * gravitySpeed); // move down with gravity 
+        }
+        GroundCheck();
     }
     private void FixedUpdate()
     {
-
-        if (space_pressed == true) { spaceDownTime++; }
-        GroundCheck();
+        if (space_pressed == true) { spaceDownTime++; }    
     }
     public void Jumping()
     {
-         jumping = true;
-         JumpPAnimator.SetInteger("CurrentAnimation", 2); //switching to jumping animation      
-         print("jump asshole");              
-         rb.AddForce(new Vector3(PlayerVelocity.x, jumpForce, PlayerVelocity.z) * (JumpSpeed/2)); 
-         StartCoroutine(jumpDelay());
+        jumping = true;
+        JumpPAnimator.SetInteger("CurrentAnimation", 2); //switching to jumping animation     
+        rb.AddForce(new Vector3(playerVel.x, playerVel.y + jumpForce, playerVel.z) * (jumpSpeed));
+        StartCoroutine(GravityDelay());    
     }
-
-    IEnumerator jumpDelay()
+    public void Falling()
     {
-        yield return new WaitForSeconds(spaceDownTime/20);
-        JumpPAnimator.SetInteger("CurrentAnimation", 4);
-        spaceDownTime = 0;
         jumping = false;
+        falling = true;
+        JumpPAnimator.SetInteger("CurrentAnimation", 4);
     }
-
-    public float GravitySpeed = 3;
-    private float playerHeightOffset = 2;
-    bool hasTriggeredIdle = true;
-    public void GroundCheck()
+    IEnumerator GravityDelay()
     {
-        //gravity and ground offset
-        
-        if(!jumping)
+        yield return new WaitForSeconds(spaceDownTime * jumpHeight);
+        Falling();    
+       // isGrounded = false;
+        spaceDownTime = 0;   
+    }
+    public void GroundCheck()
+    {    
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, groundLayerMask)) //shooting a raycast down from the player
         {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, Vector3.down, out hit, groundLayerMask))
+            //checking if the distance between the player and hit point of raycast is better than ideal distance between player and ground
+            if (Vector3.Distance(this.transform.position, hit.point) > idealDistance) 
             {
-                if (Vector3.Distance(this.transform.position, hit.point) > playerHeightOffset) // if we are too far from ground apply gravity
-                {
-                    transform.position = Vector3.Lerp(transform.position, transform.position + Vector3.down, Time.fixedDeltaTime * GravitySpeed); // move down with gravity 
-                    isGrounded = false;
-                    hasTriggeredIdle = false;
-                }
-                else
-                {
-                    isGrounded = true;
-                    if(hasTriggeredIdle == false)
-                    {
-                        hasTriggeredIdle = true;
-                        JumpPAnimator.SetInteger("CurrentAnimation", 0);
-                    }
-                }
+                grounded = false;
+                Debug.DrawRay(transform.position, Vector3.down, Color.green, groundLayerMask);
             }
-        }
-
+            else //if the player is the right distance they have either just landed or are already on the ground
+            {
+                falling = false;
+                if (grounded == false) grounded = true; JumpPAnimator.SetInteger("CurrentAnimation", 0); //we change animation when we land first time but not again
+                Debug.DrawRay(transform.position, Vector3.down, Color.red, groundLayerMask);              
+            }
+        }    
     }    
   
 }

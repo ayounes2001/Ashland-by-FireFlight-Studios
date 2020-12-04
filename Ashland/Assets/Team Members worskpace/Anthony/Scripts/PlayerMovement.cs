@@ -63,9 +63,9 @@ public class PlayerMovement : MonoBehaviour
                 (Mathf.Atan2(inputDirection.x, inputDirection.y) * Mathf.Rad2Deg + cameraT.eulerAngles.y);
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation,
                 ref turnSmoothVelocity, turnSmoothTime);
-            if (playerjump.isGrounded != false && MovementPAnimator.GetInteger("CurrentAnimation") != 2) MovementPAnimator.SetInteger("CurrentAnimation", 1);  //switching to walking animation      
+            if (playerjump.grounded != false && MovementPAnimator.GetInteger("CurrentAnimation") != 2) MovementPAnimator.SetInteger("CurrentAnimation", 1);  //switching to walking animation      
         }
-        else { if (playerjump.isGrounded != false && MovementPAnimator.GetInteger("CurrentAnimation") != 2) { MovementPAnimator.SetInteger("CurrentAnimation", 0); } }//switching to idle animation
+        else { if (playerjump.grounded != false && MovementPAnimator.GetInteger("CurrentAnimation") != 2) { MovementPAnimator.SetInteger("CurrentAnimation", 0); } }//switching to idle animation
 
 
         //Changing inbetween normal speed and runningSpeed and actually moving the player
@@ -92,9 +92,9 @@ public class PlayerMovement : MonoBehaviour
                 runSpeed = walkSpeed;
                 Debug.Log("cant run anymore");
 
-                if (playerjump.isGrounded != false && MovementPAnimator.GetInteger("CurrentAnimation") != 2) MovementPAnimator.SetInteger("CurrentAnimation", 1);  //switching to walking animation 
+                if (playerjump.grounded != false && MovementPAnimator.GetInteger("CurrentAnimation") != 2) MovementPAnimator.SetInteger("CurrentAnimation", 1);  //switching to walking animation 
             }
-           else{  MovementPAnimator.SetInteger("CurrentAnimation", 3);  } //switching to running animation
+           else { MovementPAnimator.SetInteger("CurrentAnimation", 3); } //switching to running animation
         }
         else if(stamina < maxStamina)
         {
