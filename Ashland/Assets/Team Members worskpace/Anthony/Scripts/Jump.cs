@@ -18,21 +18,19 @@ public class Jump : MonoBehaviour
     float spaceDownTime;
     public float gravitySpeed;
     public float playerHeightOffset;
-    private float idealDistance; //
+    private float idealDistance; // the ideal distance for the player to be off the ground. This is half the players scale on the y coordinate 
     int groundLayerMask;
 
     public bool grounded;
     public bool jumping;
     public bool falling;
     bool space_pressed = false;
-   
-   
+      
     void Start()
     {
         rb = DingoBody.GetComponent<Rigidbody>();
         groundLayerMask = 1 << 8;
         idealDistance = transform.localScale.y + playerHeightOffset;
-        //groundLayerMask = ~ groundLayerMask;
     }
     void Update()
     {
@@ -42,10 +40,8 @@ public class Jump : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Space) && space_pressed == false)
             {
-                space_pressed = true;
-             
+                space_pressed = true;             
                 Jumping();
-                //print(spaceDownTime);
             }
             if (Input.GetKeyUp(KeyCode.Space)) { space_pressed = false; }
             if (spaceDownTime > 5) { spaceDownTime = 5; }; if (spaceDownTime < 0.5f) { spaceDownTime = 0.5f; } //clamps so the player can't just hold down space forever and fly  
