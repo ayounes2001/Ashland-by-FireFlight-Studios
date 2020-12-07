@@ -98,10 +98,10 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3574807562436896244}
   serializedVersion: 2
-  m_Mass: 6
+  m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
@@ -115,24 +115,10 @@ BoxCollider:
   m_GameObject: {fileID: 3574807562436896244}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 13.27, y: 5, z: 8}
   m_Center: {x: -0.65, y: -1.5, z: 2.5}
---- !u!136 &1128058518941093084
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3574807562436896244}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1
-  m_Height: 6
-  m_Direction: 2
-  m_Center: {x: 0, y: -0.2, z: 2.5}
 --- !u!114 &1750453095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,22 +139,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3574807562436896244}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83dbfd6ab155bd34e88942d3deccec0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   JumpPAnimator: {fileID: 7797904627938354484}
-  jumpForce: 500
-  JumpSpeed: 2
-  JumpHeight: 0.5
-  GravitySpeed: 8
-  playerHeightOffset: 2.5
-  player: {fileID: 1893428082}
-  isGrounded: 0
-  jumping: 0
   DingoBody: {fileID: 3574807562436896244}
-  PlayerVelocity: {x: 0, y: 0, z: 0}
+  playerVel: {x: 0, y: 0, z: 0}
+  jumpForce: 5000
+  jumpSpeed: 2
+  jumpHeight: 5
+  gravitySpeed: 8
+  playerHeightOffset: 1
+  grounded: 0
+  jumping: 0
+  falling: 0
 --- !u!114 &1893428081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c81b2f664db674b8b26e030e7db0ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerjump: {fileID: 1893428080}
   MovementPAnimator: {fileID: 7797904627938354484}
   walkSpeed: 250
   runSpeed: 500
@@ -211,7 +196,20 @@ MonoBehaviour:
   speedSmoothTime: 0.1
   slider: {fileID: 0}
   cameraT: {fileID: 1684286132}
---- !u!114 &1376616269181667468
+--- !u!65 &1044410590
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3574807562436896244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3394775, y: 4.0013757, z: 5.5744095}
+  m_Center: {x: -0.14404297, y: -1.5006878, z: 2.2872047}
+--- !u!114 &1044410581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,10 +218,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3574807562436896244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49225689e81377e4fb2ff25fcc3c262f, type: 3}
+  m_Script: {fileID: 11500000, guid: 775460c1f28ef2246acedb990c6a41ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcNewSpeed: 15
+  rb: {fileID: 1893428083}
+  isGrounded: 0
+  jumpForce: 5
 --- !u!1001 &4176974402228739091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ PrefabInstance:
     - target: {fileID: 1807832391637019970, guid: 839ba81cece7f6b439551029bcaf194a, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 1684286132}
+      objectReference: {fileID: 2009109383}
     - target: {fileID: 1807832391637019971, guid: 839ba81cece7f6b439551029bcaf194a, type: 3}
       propertyPath: m_Name
       value: 'Fire Camera '
@@ -257,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1807832391637019974, guid: 839ba81cece7f6b439551029bcaf194a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8
+      value: 4.56
       objectReference: {fileID: 0}
     - target: {fileID: 1807832391637019974, guid: 839ba81cece7f6b439551029bcaf194a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -367,11 +367,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0d9d8bb168342b54e87eea9566a0f360, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 251.76947
+      value: 251.49
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0d9d8bb168342b54e87eea9566a0f360, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.43
+      value: 4.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0d9d8bb168342b54e87eea9566a0f360, type: 3}
       propertyPath: m_LocalPosition.z
@@ -611,7 +611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4248699036019529650, guid: 0d9d8bb168342b54e87eea9566a0f360, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 9.12
       objectReference: {fileID: 0}
     - target: {fileID: -4248699036019529650, guid: 0d9d8bb168342b54e87eea9566a0f360, type: 3}
       propertyPath: m_LocalRotation.y

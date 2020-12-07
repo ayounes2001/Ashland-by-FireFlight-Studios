@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Jump playerjump;
+    // public NewJump playerjump;
     [Header("Player Animation State")]
     public Animator MovementPAnimator;      //ANIMATIONS : 0 = idle , 1 = walking , 2 = jumping , 3 = running , 4 = in air 
 
@@ -63,9 +63,9 @@ public class PlayerMovement : MonoBehaviour
                 (Mathf.Atan2(inputDirection.x, inputDirection.y) * Mathf.Rad2Deg + cameraT.eulerAngles.y);
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation,
                 ref turnSmoothVelocity, turnSmoothTime);
-            if (playerjump.grounded != false && MovementPAnimator.GetInteger("CurrentAnimation") != 2) MovementPAnimator.SetInteger("CurrentAnimation", 1);  //switching to walking animation      
+            if (gameObject.GetComponent<NewJump>().isGrounded && MovementPAnimator.GetInteger("CurrentAnimation") != 2) MovementPAnimator.SetInteger("CurrentAnimation", 1);  //switching to walking animation     
         }
-        else { if (playerjump.grounded != false && MovementPAnimator.GetInteger("CurrentAnimation") != 2) { MovementPAnimator.SetInteger("CurrentAnimation", 0); } }//switching to idle animation
+        else { if (gameObject.GetComponent<NewJump>().isGrounded && MovementPAnimator.GetInteger("CurrentAnimation") != 2) { MovementPAnimator.SetInteger("CurrentAnimation", 0); } }//switching to idle animation
 
 
         //Changing inbetween normal speed and runningSpeed and actually moving the player
@@ -74,8 +74,12 @@ public class PlayerMovement : MonoBehaviour
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime);
 
         Rigidbody rb = GetComponent<Rigidbody>();
-        
-        rb.velocity = transform.forward * (currentSpeed * Time.deltaTime);
+
+        if (gameObject.GetComponent<NewJump>().isGrounded == true)
+        {
+            rb.velocity = transform.forward * (currentSpeed * Time.deltaTime);
+        }
+       
         
         // transform.Translate((transform.forward * (currentSpeed * Time.deltaTime)), Space.World);
      
@@ -92,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
                 runSpeed = walkSpeed;
                 Debug.Log("cant run anymore");
 
-                if (playerjump.grounded != false && MovementPAnimator.GetInteger("CurrentAnimation") != 2) MovementPAnimator.SetInteger("CurrentAnimation", 1);  //switching to walking animation 
+                if (gameObject.GetComponent<NewJump>().isGrounded != false && MovementPAnimator.GetInteger("CurrentAnimation") != 2) MovementPAnimator.SetInteger("CurrentAnimation", 1);  //switching to walking animation 
             }
            else { MovementPAnimator.SetInteger("CurrentAnimation", 3); } //switching to running animation
         }
