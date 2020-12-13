@@ -13,7 +13,6 @@ public class AIFollowStop : MonoBehaviour
     {
         if (other != null)
         {
-            other.gameObject.GetComponent<NPCAVOID>().speed = 0;
         }
     }
 
