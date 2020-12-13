@@ -6,7 +6,7 @@ using UnityEngine;
 public class NewJump : MonoBehaviour
 {
     public Rigidbody rb;
-    
+    public Animator playerAnimator;
     public bool isGrounded;
     
 
@@ -24,8 +24,11 @@ public class NewJump : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce,ForceMode.Impulse);
             isGrounded = false;
+            //changing to jump animation
+            playerAnimator.SetInteger("CurrentAnimation",2);
         }
-            
+        //checking if player is falling and chaning animation
+        if (rb.velocity.y < -1) { playerAnimator.SetInteger("CurrentAnimation", 4); }            
     }
 
     private void OnCollisionEnter(Collision other)

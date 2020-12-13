@@ -1124,6 +1124,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c81b2f664db674b8b26e030e7db0ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &298189676 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7797904627938354484, guid: bd492cc7ae450de41b9084b572362aca, type: 3}
+  m_PrefabInstance: {fileID: 1609018645}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &310647715
 GameObject:
   m_ObjectHideFlags: 0
@@ -2706,7 +2711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4665568304662835032, guid: d13c844e4c0224d4ca646f6efe018780, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.740003
+      value: -7.1099977
       objectReference: {fileID: 0}
     - target: {fileID: 4665568304662835032, guid: d13c844e4c0224d4ca646f6efe018780, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4343,7 +4348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4665568304662835032, guid: d13c844e4c0224d4ca646f6efe018780, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.95
+      value: 7.58
       objectReference: {fileID: 0}
     - target: {fileID: 4665568304662835032, guid: d13c844e4c0224d4ca646f6efe018780, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5750,6 +5755,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1044410581, guid: bd492cc7ae450de41b9084b572362aca, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 298189676}
     - target: {fileID: 1893428044, guid: bd492cc7ae450de41b9084b572362aca, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -5766,6 +5775,10 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 1438256262}
+    - target: {fileID: 1893428082, guid: bd492cc7ae450de41b9084b572362aca, type: 3}
+      propertyPath: maxStamina
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3574807562436896244, guid: bd492cc7ae450de41b9084b572362aca, type: 3}
       propertyPath: m_Name
       value: Dingo
@@ -7425,6 +7438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2118876381}
+  playerAnimator: {fileID: 0}
   isGrounded: 0
   jumpForce: 10
 --- !u!136 &2118876383
