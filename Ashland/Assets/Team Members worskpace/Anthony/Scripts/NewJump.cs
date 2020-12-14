@@ -20,7 +20,7 @@ public class NewJump : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
             rb.AddForce(Vector3.up * jumpForce,ForceMode.Impulse);
             isGrounded = false;
@@ -32,10 +32,7 @@ public class NewJump : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other)
-    {
-        
-            isGrounded = true;
-        
-        
+    {       
+            isGrounded = true;       
     }
 }
