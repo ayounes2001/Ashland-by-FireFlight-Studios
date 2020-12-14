@@ -4978,7 +4978,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1381126252
 Transform:
   m_ObjectHideFlags: 0
@@ -5758,6 +5758,10 @@ PrefabInstance:
       propertyPath: playerAnimator
       value: 
       objectReference: {fileID: 298189676}
+    - target: {fileID: 1750453095, guid: bd492cc7ae450de41b9084b572362aca, type: 3}
+      propertyPath: npcNewSpeed
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1893428044, guid: bd492cc7ae450de41b9084b572362aca, type: 3}
       propertyPath: m_Enabled
       value: 1
