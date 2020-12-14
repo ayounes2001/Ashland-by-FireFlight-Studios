@@ -54,8 +54,8 @@ public class Nearby : MonoBehaviour
 				players.Add(playerControllerTopDown);
 				PlayerListUpdated?.Invoke();
 
-				Debug.Log("I have entered the trigger zone");
-				Debug.Log(playerControllerTopDown.gameObject.name);
+				//Debug.Log("I have entered the trigger zone");
+				//Debug.Log(playerControllerTopDown.gameObject.name);
 			}
 		}
 	}
@@ -71,8 +71,8 @@ public class Nearby : MonoBehaviour
 				players.Remove(playerControllerTopDown);
 				PlayerListUpdated?.Invoke();
 
-				Debug.Log("I have exited the trigger zone");
-				Debug.Log(playerControllerTopDown.gameObject.name);
+				//Debug.Log("I have exited the trigger zone");
+				//Debug.Log(playerControllerTopDown.gameObject.name);
 			}
 		}
 	}

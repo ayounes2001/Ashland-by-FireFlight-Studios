@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 9206024657899938691}
   - component: {fileID: 9206024657899938690}
   - component: {fileID: 9206024657899938689}
+  - component: {fileID: 4665568303495945077}
+  - component: {fileID: 4665568303495945078}
   m_Layer: 0
   m_Name: Kangaroo
   m_TagString: Untagged
@@ -28,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9206024657899938688}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.67, y: -1.9999313, z: 3.3859825}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -108,10 +110,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rB: {fileID: 0}
-  distance: 3
-  turnSpeed: 2
+  distance: 10
+  turnSpeed: 5
   direction: 5
   feelerRadius: 1
+--- !u!114 &4665568303495945077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9206024657899938688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5df30945e43405442a04cb47206e7518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aniMator: {fileID: 0}
+  IdleDistance: 2
+--- !u!95 &4665568303495945078
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9206024657899938688}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: ed81f2934491f7c45b79dc83ab82e84a, type: 3}
+  m_Controller: {fileID: 9100000, guid: 394c8f1994dba1c40b13ce13e56f73ec, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &4574868879164453944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -153,7 +188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ed81f2934491f7c45b79dc83ab82e84a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ed81f2934491f7c45b79dc83ab82e84a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -595,7 +630,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 113.367256
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: ed81f2934491f7c45b79dc83ab82e84a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ed81f2934491f7c45b79dc83ab82e84a, type: 3}
 --- !u!4 &4104901853675475923 stripped
 Transform:

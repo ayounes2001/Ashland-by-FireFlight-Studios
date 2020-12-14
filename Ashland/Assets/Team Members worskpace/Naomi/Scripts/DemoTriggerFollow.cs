@@ -17,7 +17,7 @@ namespace AnthonyY
         private void OnTriggerEnter(Collider other)
         {
                  playerMetEvent?.Invoke();
-              Debug.Log("hi");
+             // Debug.Log("hi");
                 aiScript = GetComponent<TurnTowardsBehaviour>();
                 aiScript.enabled = true;
                 avoidScript = GetComponent<NPCAVOID>();
