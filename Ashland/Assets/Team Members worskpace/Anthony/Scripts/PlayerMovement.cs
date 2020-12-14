@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         //Basing our Input on the direction of the camera and smoothing it out
         if (inputDirection != Vector2.zero)
         {
-            print("moving");
+           // print("moving");
             float targetRotation =
                 (Mathf.Atan2(inputDirection.x, inputDirection.y) * Mathf.Rad2Deg + cameraT.eulerAngles.y);
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation,
@@ -88,13 +88,13 @@ public class PlayerMovement : MonoBehaviour
         if (running )
         {
             stamina -= Time.deltaTime;
-            Debug.Log("Im losing Stam!");
+            //Debug.Log("Im losing Stam!");
             if (stamina <= 0)
             {
                 stamina = 0;
                 running = false;
                 runSpeed = walkSpeed;
-                Debug.Log("cant run anymore");
+               // Debug.Log("cant run anymore");
 
                 if (gameObject.GetComponent<NewJump>().isGrounded != false && MovementPAnimator.GetInteger("CurrentAnimation") != 2) MovementPAnimator.SetInteger("CurrentAnimation", 1);  //switching to walking animation 
             }
@@ -103,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
         else if(stamina < maxStamina)
         {
             stamina += Time.deltaTime;
-            Debug.Log("Regen Stam");
+          //  Debug.Log("Regen Stam");
             runSpeed = 500;
             // currentSpeed = 15f;
         }
