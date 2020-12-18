@@ -64,8 +64,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5424957, y: 0.7532804, z: 1.2261505}
-  m_Center: {x: 0.11779022, y: 0.7304865, z: -0.07485962}
+  m_Size: {x: 0.84703064, y: 1.0823827, z: 1.4998283}
+  m_Center: {x: -0.41187286, y: 0.8253367, z: -0.21169853}
 --- !u!114 &4675746295733080129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a0e0b06acc457a84d8304975afe5209b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.259
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a0e0b06acc457a84d8304975afe5209b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -185,15 +185,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a0e0b06acc457a84d8304975afe5209b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a0e0b06acc457a84d8304975afe5209b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 20
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a0e0b06acc457a84d8304975afe5209b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 20
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: -8188870121746520561, guid: a0e0b06acc457a84d8304975afe5209b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -219,6 +219,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.770081
       objectReference: {fileID: 0}
+    - target: {fileID: -6123731347151673987, guid: a0e0b06acc457a84d8304975afe5209b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 304f98de34e198c41bdffad099ce4362, type: 2}
     - target: {fileID: -4768351219803855520, guid: a0e0b06acc457a84d8304975afe5209b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -0.22957419

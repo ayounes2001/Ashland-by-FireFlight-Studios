@@ -24,11 +24,13 @@ public class CamFollow : MonoBehaviour
     private void Start()
     {
         // Checking if the cursor is on the screen
-        // if (lockCursor)
-        // {
-        //     Cursor.lockState = CursorLockMode.Locked;
-        //     Cursor.visible = true;
-        // }
+#if !UNITY_EDITOR
+        if (lockCursor)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = true;
+        }
+#endif 
         
     }
 
