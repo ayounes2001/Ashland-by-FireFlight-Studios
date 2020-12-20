@@ -17,7 +17,7 @@ public class Smoketrigger : MonoBehaviour
   
         if (Input.GetKeyDown(KeyCode.F) && smoke == false) { smoke = true; print("turn on smoke"); Smoke.SetActive(true); }
   
-        if (Input.GetKeyDown(KeyCode.F) && smoke == true) { smoke = false; Smoke.SetActive(false); }
+        if (Input.GetKeyDown(KeyCode.G) && smoke == true) { smoke = false; print("turn off smoke"); Smoke.SetActive(false); }
   
     }
 }
