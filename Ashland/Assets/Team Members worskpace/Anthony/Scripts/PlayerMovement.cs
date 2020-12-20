@@ -15,8 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
 
     [Header("Player Speeds")]
-    public int walkSpeed = 250;
-    public int runSpeed = 500;
+    public int walkSpeed;
+    public int runSpeed;
     public float currentSpeed;
     public float stamina = 5;
     public float maxStamina = 5;
@@ -104,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
         {
             stamina += Time.deltaTime;
           //  Debug.Log("Regen Stam");
-            runSpeed = 500;
+           // runSpeed = 500;
             // currentSpeed = 15f;
         }
     }

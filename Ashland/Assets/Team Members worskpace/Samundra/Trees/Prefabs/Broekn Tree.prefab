@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7410964557295798913}
   - component: {fileID: 5870111619743171876}
   - component: {fileID: 8543931177239556590}
-  - component: {fileID: 8507191000023924856}
+  - component: {fileID: 1422917949}
   m_Layer: 0
   m_Name: Broekn Tree
   m_TagString: Untagged
@@ -82,7 +82,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8507191000023924856
+--- !u!64 &1422917949
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,6 +93,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1814978103262793429, guid: 32358c9331a3656479b515fb8c0fc765, type: 3}
