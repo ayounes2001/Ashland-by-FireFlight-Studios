@@ -106,11 +106,14 @@ public class UIManager : MonoBehaviour
         isPaused = false;
         isKeyEnabled_ESC = false;
     }
-
+    
+    //This will only work if we have only two scenes atm
     public void BackToMenu()
     {
+        print("backtomenu");
         optionsUI.SetActive(false);
-        pauseMenuUI.SetActive(true);
+        int nextSceneToLoad = SceneManager.GetActiveScene().buildIndex - 1;
+        SceneManager.LoadScene(nextSceneToLoad);
     }
     public void QuitGame()
     {
