@@ -52,6 +52,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-5776147739802816764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Danger
+  m_EditorClassIdentifier: 
+  Name: Danger
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-5521623965800362535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +127,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 23500
---- !u!114 &-3338473813398670813
+--- !u!114 &-2490018097773249890
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,20 +136,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/FireTheme
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: event:/Music/FireTheme
-  guid: d6ee99625699de49bc81fe8cfdbca645
-  Banks:
-  - {fileID: 1956034459749691207}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 147223
+  Path: Assets/FMODBanks/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637435639458712664
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-2333213934745692486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +162,7 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
---- !u!114 &-1530649715966034604
+--- !u!114 &-2203618529092140191
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,14 +171,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music/Safe
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Music
   m_EditorClassIdentifier: 
-  Name: Safe
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
+  Path: event:/Music/Music
+  guid: 803a45b81c04c44dae323fd3b73810cc
+  Banks:
+  - {fileID: 1971185528309146607}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -5776147739802816764}
+  - {fileID: 4489403406956350758}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 467223
+--- !u!114 &-1943657395620324407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/CalmTheme
+  m_EditorClassIdentifier: 
+  Path: event:/Music/CalmTheme
+  guid: 33f80ef13147cf42a487e5d4982a6624
+  Banks:
+  - {fileID: 1971185528309146607}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 275223
 --- !u!114 &-1310172084280336630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,20 +242,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 2740489526028925284}
-  - {fileID: 2966440871050767359}
-  - {fileID: 1956034459749691207}
-  - {fileID: 2004651470768061063}
+  - {fileID: -2490018097773249890}
+  - {fileID: 1971185528309146607}
+  - {fileID: 8829466420932789288}
   EditorEvents:
   - {fileID: 8868584553009720624}
-  - {fileID: 5132491413388676108}
-  - {fileID: 8042124360106086427}
-  - {fileID: -3338473813398670813}
+  - {fileID: -1943657395620324407}
+  - {fileID: -2203618529092140191}
+  - {fileID: 1636673547575436050}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 2966440871050767359}
+  - {fileID: -2490018097773249890}
   StringsBanks:
   - {fileID: 2740489526028925284}
-  stringsBankWriteTime: 637437501702126070
+  stringsBankWriteTime: 637435639458772495
   cacheVersion: 3
 --- !u!114 &1348405526892691515
 MonoBehaviour:
@@ -249,7 +292,30 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
---- !u!114 &1956034459749691207
+--- !u!114 &1636673547575436050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/FireTheme
+  m_EditorClassIdentifier: 
+  Path: event:/Music/FireTheme
+  guid: d6ee99625699de49bc81fe8cfdbca645
+  Banks:
+  - {fileID: 1971185528309146607}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 147223
+--- !u!114 &1971185528309146607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,25 +329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FMODBanks/Desktop/Music.bank
   SubDir: 
-  lastModified: 637437501703846485
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &2004651470768061063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Player.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/FMODBanks/Desktop/Player.bank
-  SubDir: 
-  lastModified: 637437501703976502
+  lastModified: 637435639460108921
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -317,7 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FMODBanks/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637437501702126070
+  lastModified: 637435639458772495
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -358,8 +406,8 @@ MonoBehaviour:
   lastModified: 637429492426467229
   LoadResult: 0
   FileSizes: []
-  Exists: 0
---- !u!114 &5132491413388676108
+  Exists: 1
+--- !u!114 &4489403406956350758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -368,20 +416,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/CalmTheme
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Safe
   m_EditorClassIdentifier: 
-  Path: event:/Music/CalmTheme
-  guid: 33f80ef13147cf42a487e5d4982a6624
-  Banks:
-  - {fileID: 1956034459749691207}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 275223
+  Name: Safe
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &5293979767289244577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,7 +511,7 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
---- !u!114 &8042124360106086427
+--- !u!114 &8829466420932789288
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -478,22 +520,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Music
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Player.bank
   m_EditorClassIdentifier: 
-  Path: event:/Music/Music
-  guid: 803a45b81c04c44dae323fd3b73810cc
-  Banks:
-  - {fileID: 1956034459749691207}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -7588942804229397826}
-  - {fileID: -1530649715966034604}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 467223
+  Path: Assets/FMODBanks/Desktop/Player.bank
+  SubDir: 
+  lastModified: 637435639469025422
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &8868584553009720624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,7 +544,7 @@ MonoBehaviour:
   Path: event:/Dingo/Footsteps
   guid: ce27c3ed79ada643b9feeaa3dfc91b72
   Banks:
-  - {fileID: 2004651470768061063}
+  - {fileID: 8829466420932789288}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
